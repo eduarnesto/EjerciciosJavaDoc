@@ -3,36 +3,38 @@ package clases;
 import java.util.Random;
 
 /**
+ * Clase donde se guarda toda la informacion relevante con el tesoro
+ * 
  * @author earnesto
  */
 public class Tesoro {
 	/**
-	 * @param TAM_TABLERO Constante para el tamaño del tablero
+	 * Constante para el tamaño del tablero
 	 */
 	public static final int TAM_TABLERO = 5;
 
 	/**
-	 * @param xTesoro Variable para la posicion x del tesoro
+	 * Variable para la posicion x del tesoro
 	 */
 	static int xTesoro;
 
 	/**
-	 * @param yTesoro Variable para la posicion y del tesoro
+	 * Variable para la posicion y del tesoro
 	 */
 	static int yTesoro;
 
 	/**
-	 * @param xJugador Variable para la posicion x del jugador
+	 * Variable para la posicion x del jugador
 	 */
 	int xJugador = 1;
 
 	/**
-	 * @param yJugador Variable para la posicion y del jugador
+	 * Variable para la posicion y del jugador
 	 */
 	int yJugador = 1;
 
 	/**
-	 * 
+	 * Esta función asigna valores aleatorios a la posicion del tesoro
 	 */
 	static void generaPosicionTesoro() {
 		Random rand = new Random();
@@ -41,7 +43,7 @@ public class Tesoro {
 	}
 
 	/**
-	 * 
+	 * Esta funcion imprime el tablero
 	 */
 	void pintaTablero() {
 		// Imprimimos la primera línea de números
@@ -71,9 +73,12 @@ public class Tesoro {
 	}
 
 	/**
+	 * Esta funcion hace que el jugador se mueva
 	 * 
-	 * @param movimiento
-	 * @return
+	 * @param movimiento Movimiento que debe de realizar el jugador
+	 * @return Deevuleve -1 si la acción no se puede hacer, -2 si la acción no es
+	 *         una de las cuatro opciones u si es valida cambia la posicion del
+	 *         jugador dependiendo del movimiento elegido
 	 */
 	int mueveJugador(String movimiento) {
 		int res = 0;
@@ -111,18 +116,19 @@ public class Tesoro {
 		default:
 			res = -2;
 			break;
-		}		
-		
+		}
+
 		return res;
 	}
 
 	/**
+	 * Comprueba si la posicion del tesoro y del jugador es la misma
 	 * 
-	 * @return
+	 * @return Regresa si se ha encontrado el tesoro o no
 	 */
-	boolean buscaTesoro(){
+	boolean buscaTesoro() {
 		boolean res = false;
-		if(xTesoro == xJugador && yTesoro == yJugador) {
+		if (xTesoro == xJugador && yTesoro == yJugador) {
 			res = true;
 		}
 		return res;
