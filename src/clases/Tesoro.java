@@ -31,12 +31,18 @@ public class Tesoro {
 	 */
 	int yJugador = 1;
 
+	/**
+	 * 
+	 */
 	static void generaPosicionTesoro() {
 		Random rand = new Random();
 		xTesoro = rand.nextInt(1, TAM_TABLERO + 1);
 		yTesoro = rand.nextInt(1, TAM_TABLERO + 1);
 	}
 
+	/**
+	 * 
+	 */
 	void pintaTablero() {
 		// Imprimimos la primera línea de números
 		for (int i = 1; i <= TAM_TABLERO; i++) {
@@ -64,6 +70,11 @@ public class Tesoro {
 		}
 	}
 
+	/**
+	 * 
+	 * @param movimiento
+	 * @return
+	 */
 	int mueveJugador(String movimiento) {
 		int res = 0;
 		String movMinuscula = movimiento.toLowerCase();
@@ -105,6 +116,10 @@ public class Tesoro {
 		return res;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	boolean buscaTesoro(){
 		boolean res = false;
 		if(xTesoro == xJugador && yTesoro == yJugador) {
